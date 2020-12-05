@@ -6,6 +6,8 @@ const ind = require('./routes/index.js');
 const session = require('express-session')
 const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
+const {API_URL} = process.env;
+console.log("ESTE ES APIURL ",API_URL)
 
 
 const { Client, Tools, User, Category, Order } = require('./db.js');
@@ -63,7 +65,7 @@ server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://jdf-client.herokuapp.com'); // update to match the domain you will make the request from    https://jdf-client.herokuapp.com/
+  res.header('Access-Control-Allow-Origin', API_URL); // update to match the domain you will make the request from    https://jdf-client.herokuapp.com/
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
