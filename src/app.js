@@ -6,7 +6,7 @@ const ind = require('./routes/index.js');
 const session = require('express-session')
 const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
-const { API_URL } = process.env;
+const API_URL = process.env.API_URL;
 console.log("ESTE ES APIURL ",  API_URL)
 
 
