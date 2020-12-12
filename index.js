@@ -25,7 +25,7 @@ const port = process.env.PORT || 8080
 conn.sync({ force: true }).then(() => {
   server.listen(port, () => {
     console.log('|||||||||||||||||||||');
-    console.log('| Listening at 8080 |');
+    console.log( `${port}` );
     console.log('|||||||||||||||||||||'); // eslint-disable-line no-console
   });
 });
